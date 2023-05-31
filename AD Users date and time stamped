@@ -1,7 +1,5 @@
 $dateTime = Get-Date -Format "yyyyMMdd_HHmmss"
 $fileName = "AD_Users_$dateTime.txt"
-$filePath = "C:\Temp\$fileName"
-
- 
+$filePath = "C:\Temp\$fileName" 
 
 Get-ADUser -Filter * | Sort-Object Name | Format-Table Name, UserPrincipalName | Out-File -FilePath $filePath -Encoding UTF8
